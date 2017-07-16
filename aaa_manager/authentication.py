@@ -25,11 +25,13 @@ from email.mime.multipart import MIMEMultipart
 LOG = logging.getLogger(__name__)
 # _DEFAULT_DB_HOST = 'mongo'
 #_DEFAULT_DB_HOST = "AUTH_DB_HOST" in os.environ
-_DEFAULT_DB_HOST = os.getenv("AUTH_DB_HOST", "mongo")
+#_DEFAULT_DB_HOST = os.getenv("AUTH_DB_HOST", "mongo")
 #_DEFAULT_DB_PORT = 27017
 #_DEFAULT_DB_PORT = "AUTH_DB_PORT" in os.environ
-_DEFAULT_DB_PORT = int(os.getenv("AUTH_DB_PORT", 27017))
+#_DEFAULT_DB_PORT = int(os.getenv("AUTH_DB_PORT", 27017))
 
+_DEFAULT_DB_HOST = '10.0.0.7'
+_DEFAULT_DB_PORT = 44802
 
 USER_COLLECTION = 'users'
 APP_KEY = 'app_id'
