@@ -58,8 +58,8 @@ _CODE_CREATE_USER = """
     """
 
 
-#_DEFAULT_DB_HOST = 'mongo'   Commented for testing env variables
-#_DEFAULT_DB_PORT = 27017
+_DEFAULT_DB_HOST = '10.0.0.7'
+_DEFAULT_DB_PORT = 44802
 _DEFAULT_DB_NAME = 'AAADB'
 _DEFAULT_CLIENT_CERT = 'certs/mongo_client_crt.pem'
 _DEFAULT_CA_CERT = 'certs/root_ca.pem'
@@ -88,12 +88,9 @@ if __name__ == '__main__':
         varsF.write("AUTH_DB_PORT=" + ipPort[1] + "\n")
     
     
+    client = MongoClient(_DEFAULT_DB_HOST, _DEFAULT_DB_PORT)
     
-    '''
-        client = MongoClient(_DEFAULT_DB_HOST, _DEFAULT_DB_PORT)
-        '''
-    
-    client = MongoClient(ipPort[0], ipPort[1])
+    '''client = MongoClient(ipPort[0], ipPort[1])'''
     db = client["admin"]
     db.add_user("admin", pwd="tijolo22",
                 roles=[{'role':'readWrite', 'db':'AAADB'},
